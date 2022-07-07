@@ -52,7 +52,7 @@ def main(config_path):
                     validation_data=(X_valid, y_valid), verbose=2) 
 
     model_dir_path = os.path.join("artifacts", "models")
-    os.makedirs(model_dir_path, exist_ok=True)
+    create_directories([model_dir_path])
     model_path = os.path.join(model_dir_path, "base_model.h5")
     model.save(model_path)
     logging.info(f"base model is saved at {model_path}")
